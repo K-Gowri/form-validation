@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <script>
+        function validate(){
+            var name = document.getElementById("fname");
+            var phone = document.getElementById("phone");
+            var pass = document.getElementById("pass");
+            var email = document.getElementById("email");
+            if(name.value.trim()==""){
+                alert("user name should not be empty");
+                return false;
+            }
+            else if(phone.value.trim().length<10){
+                alert("phone number contain 10 integer");
+                return false;
+            }
+            else if(pass.value.trim()==""){
+                alert("Password must not be empty");
+                return false;
+            }
+            else if(email.value.trim()==""){
+                alert("fill the email");
+                return false;
+            }
+            else{
+                alert("submitted");
+                return true;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>Validating form</h1>
+   <form onsubmit="return validate()" > 
+    <label for="fname">Name *</label>
+    <input type="text"  placeholder="Enter your name here" name="fname" id="fname"  ><br>
+    <br>
+    <br>
+    <label for="email">Email&emsp;</label>
+    <input type="email" placeholder="Enter your email here" name="email" id="email"  ><br>
+    <br>
+    <br>
+    <label for="pass">Password</label>
+    <input type="password" name="pass"  id="pass"  >
+<br>
+<br>
+    <label for="Phone">Phone&emsp;</label>
+    <input type="phone" placeholder="Enter your number here" name="phone"  id="phone"  ><br>
+    <br>
+    <br>
+    <label for="male">Male</label>
+    <input type="radio" placeholder="Enter your name here" name="male"  >
+    <label for="female">Female</label>
+    <input type="radio" placeholder="Enter your name here" name="fname"  >
+<br>
+<br>
+
+    <button type="submit" >Submit</button>
+
+</form>
+</body>
+</html>
